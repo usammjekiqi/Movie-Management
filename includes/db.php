@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass='';
-$dbname = 'mmp';
+$dbname = 'mmm';
 
 try {
 
