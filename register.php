@@ -24,6 +24,34 @@
                         <h2 class="text-center">register</h2> 
 
 
+
+                        <?php
+                        if($_SERVER['requset_method '] == "post"){
+                            $name = $_POST['name'];
+                            $email = $_POST['email'];
+
+                            $passwoerd = password_hash($_POST['password'], password_bcrypt);
+                            $sql "INSERT INTO users (name, email, password) VALUE (?,?,?)";
+
+
+                            $stmt = $pdo->prepare($sql)
+                            $stmt-> bind_param('sss', $name, $email, $passwoerd)
+
+                            if($stmt -> execute()){
+                                echo"<div>requairt stasion suscsuful<a heref='login.php'>login here</a></div>"; 
+                            }else{
+                               echo" <div clas='alert alert-danger'>error" .$stmt->error."</div>"
+                            }
+
+                        }
+
+
+
+
+
+                        ?>
+
+
                         <form method="POST">
                         <div class="mb-3">
                                 <label for="naem" class="form-lable">name</label>
